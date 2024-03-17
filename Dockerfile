@@ -8,4 +8,6 @@ WORKDIR /usr/src/app
 COPY . .
 RUN pnpm install --silent
 
+COPY entrypoint.sh /entrypoint.sh
+
 ENTRYPOINT [ "/entrypoint.sh" ]
