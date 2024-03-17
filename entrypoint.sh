@@ -4,6 +4,6 @@ echo "Hello $1"
 time=$(date)
 echo "time=$time" >> $GITHUB_OUTPUT
 
-cp /action/workspace .
+cp -r /action/workspace .
 
 ls
