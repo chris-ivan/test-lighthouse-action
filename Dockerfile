@@ -15,16 +15,17 @@ RUN apt-get update && apt-get install gnupg wget -y && \
 
 WORKDIR /action/workspace
 
-COPY . .
+# COPY . .
 
-RUN npm install
+# RUN npm install
 
-RUN npm start
+# RUN npm start
 
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x entrypoint.sh
 
-COPY . .
+COPY src /src
+COPY package.json /package.json
 
 ENTRYPOINT [ "/entrypoint.sh" ]
