@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install gnupg wget -y && \
   apt-get install google-chrome-stable -y --no-install-recommends && \
   rm -rf /var/lib/apt/lists/*
 
-WORKDIR /action/workspace
+# WORKDIR /action/workspace
 
 # COPY . .
 
@@ -24,8 +24,5 @@ WORKDIR /action/workspace
 COPY entrypoint.sh /entrypoint.sh
 
 # RUN chmod +x entrypoint.sh
-
-COPY src /src
-COPY package.json /package.json
 
 ENTRYPOINT [ "/entrypoint.sh" ]
