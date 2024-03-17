@@ -13,16 +13,18 @@ RUN apt-get update && apt-get install gnupg wget -y && \
   apt-get install google-chrome-stable -y --no-install-recommends && \
   rm -rf /var/lib/apt/lists/*
 
-# WORKDIR /action/workspace
+WORKDIR /action/workspace
 
-# COPY . .
+COPY . .
 
-# RUN npm install
+RUN npm install
 
-# RUN npm start
+RUN npm start
 
 COPY entrypoint.sh /entrypoint.sh
 
-# RUN chmod +x entrypoint.sh
+COPY lighthouse /lighthouse
+
+RUN chmod +x entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
