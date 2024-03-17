@@ -1,6 +1,6 @@
-import puppeteer, { Page } from "puppeteer";
-import lighthouse from "lighthouse";
 import fs from "fs";
+import lighthouse from "lighthouse";
+import puppeteer, { Page } from "puppeteer";
 
 const HOSTNAME = "https://sqemp-fe.stg.squantumengine.com";
 const OUTPUT_FOLDER = "lighthouse";
@@ -85,8 +85,9 @@ const targetEndpoints = ["/campaign", "/audit"];
 
 (async () => {
   const browser = await puppeteer.launch({
-    headless: "new",
+    headless: true,
     // headless: false,
+    args: ["--no-sandbox"],
     defaultViewport: {
       width: 1050,
       height: 800,
