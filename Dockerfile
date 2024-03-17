@@ -23,8 +23,6 @@ RUN npm start
 
 COPY entrypoint.sh /entrypoint.sh
 
-COPY lighthouse /lighthouse
-
 RUN chmod +x entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
