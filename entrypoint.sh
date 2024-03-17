@@ -1,8 +1,8 @@
 #!/bin/sh -l
 
-ls -l
+ls /action/workspace
 # print ls result
-echo ls
+echo ls /action/workspace
 
 echo "Hello $1"
 time=$(date)
