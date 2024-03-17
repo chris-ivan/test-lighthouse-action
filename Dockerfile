@@ -23,7 +23,7 @@ WORKDIR /action/workspace
 
 COPY entrypoint.sh /entrypoint.sh
 
-RUN chmod +x entrypoint.sh
+# RUN chmod +x entrypoint.sh
 
 COPY src /src
 COPY package.json /package.json
