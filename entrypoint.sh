@@ -3,5 +3,5 @@
 echo "Hello $1"
 time=$(date)
 echo "time=$time" >> $GITHUB_OUTPUT
-ls lighthouse
+ls
 copy lighthouse $GITHUB_WORKSPACE
